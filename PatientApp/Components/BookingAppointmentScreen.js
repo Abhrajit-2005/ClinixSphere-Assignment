@@ -77,7 +77,7 @@ export default function BookAppointmentScreen({ route, navigation }) {
             .minute(minutes)
             .second(0)
             .millisecond(0)
-            .toISOString();
+            .format("YYYY-MM-DDTHH:mm:ss");
 
         console.log("DEBUG: Final ISO Time =>", isoTime);
 
