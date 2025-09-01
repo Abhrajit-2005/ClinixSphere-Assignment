@@ -16,7 +16,7 @@ dayjs.extend(isSameOrBefore);
 
 
 // Patient books an appointment
-router.post('/', auth, requireRole(patient), async (req, res) => {
+router.post('/', auth, requireRole("patient"), async (req, res) => {
     try {
         console.log("DEBUG: Appointment booking attempt by user", req.user.id);
 
