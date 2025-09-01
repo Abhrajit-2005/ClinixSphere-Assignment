@@ -79,7 +79,7 @@ export default function BookAppointmentScreen({ route, navigation }) {
             .millisecond(0)
             .toISOString();
 
-        // console.log("DEBUG: Final ISO Time =>", isoTime);
+        console.log("DEBUG: Final ISO Time =>", isoTime);
 
         try {
             const res = await fetch("https://clinixsphere-assignment.onrender.com/appointments", {
