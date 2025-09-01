@@ -16,8 +16,10 @@ dayjs.extend(isSameOrBefore);
 
 
 // Patient books an appointment
-router.post('/', auth, async (req, res) => {
+router.post('/', auth, requireRole(patient), async (req, res) => {
     try {
+        console.log("DEBUG: Appointment booking attempt by user", req.user.id);
+
         if (req.user.role !== 'patient')
             return res.status(403).json({ message: 'Only patients can book' });
 

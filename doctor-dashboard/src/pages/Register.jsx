@@ -35,7 +35,7 @@ export default function Register() {
 
     return (
         <div className="flex items-center justify-center">
-            <div className="bg-white p-8 rounded-xl shadow-lg w-96">
+            <div className="bg-white p-4 rounded-xl shadow-lg w-96">
                 <h2 className="text-2xl font-bold mb-6 text-center">
                     Doctor Registration
                 </h2>

@@ -16,7 +16,7 @@ function BookingsScreen() {
                     return;
                 }
 
-                const response = await fetch("http://192.168.29.181:4000/appointments/my-patient", {
+                const response = await fetch("https://clinixsphere-assignment.onrender.com/appointments/my-patient", {
                     method: "GET",
                     headers: {
                         "Content-Type": "application/json",

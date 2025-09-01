@@ -51,7 +51,7 @@ export default function BookAppointmentScreen({ route, navigation }) {
 
 
     const handleBooking = async () => {
-        console.log("DEBUG: handleBooking fired 🚀");
+        // console.log("DEBUG: handleBooking fired 🚀");
 
         if (!selectedDate || !selectedTime) {
             Alert.alert("Select Date & Time", "Please choose a date and time slot");
@@ -59,7 +59,7 @@ export default function BookAppointmentScreen({ route, navigation }) {
             return;
         }
 
-        console.log("DEBUG: Selected", { selectedDate, selectedTime });
+        // console.log("DEBUG: Selected", { selectedDate, selectedTime });
 
 
         const token = await getToken();
@@ -79,10 +79,10 @@ export default function BookAppointmentScreen({ route, navigation }) {
             .millisecond(0)
             .toISOString();
 
-        console.log("DEBUG: Final ISO Time =>", isoTime);
+        // console.log("DEBUG: Final ISO Time =>", isoTime);
 
         try {
-            const res = await fetch("http://192.168.29.181:4000/appointments", {
+            const res = await fetch("https://clinixsphere-assignment.onrender.com/appointments", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

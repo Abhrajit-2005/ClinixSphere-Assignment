@@ -15,7 +15,7 @@ export default function AuthScreen({ navigation }) {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
-    const API_URL = "http://192.168.29.181:4000/auth"; // replace with your backend URL
+    const API_URL = "https://clinixsphere-assignment.onrender.com/auth"; // replace with your backend URL
 
     const handleAuth = async () => {
         try {

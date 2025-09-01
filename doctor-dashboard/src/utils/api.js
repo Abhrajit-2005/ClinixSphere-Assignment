@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-    baseURL: "http://localhost:4000", // Backend URL
+    baseURL: "https://clinixsphere-assignment.onrender.com", // Backend URL
 });
 
 // Attach token automatically if present

@@ -15,7 +15,7 @@ export default function DoctorsScreen({ navigation }) {
                     return;
                 }
 
-                const url = "http://192.168.29.181:4000/patient/doctors";
+                const url = "https://clinixsphere-assignment.onrender.com/patient/doctors";
                 const res = await fetch(url, {
                     method: "GET",
                     headers: {

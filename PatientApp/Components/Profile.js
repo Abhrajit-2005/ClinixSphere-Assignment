@@ -21,7 +21,7 @@ export default function ProfileScreen({ navigation }) {
         const fetchProfile = async () => {
             try {
                 const token = await getToken();
-                const res = await fetch("http://192.168.29.181:4000/patient/profile", {
+                const res = await fetch("https://clinixsphere-assignment.onrender.com/patient/profile", {
                     method: "GET",
                     headers: {
                         Authorization: `Bearer ${token}`,
@@ -49,7 +49,7 @@ export default function ProfileScreen({ navigation }) {
     const handleUpdate = async () => {
         try {
             const token = await getToken();
-            const res = await fetch("http://192.168.29.181:4000/patient/profile", {
+            const res = await fetch("https://clinixsphere-assignment.onrender.com/patient/profile", {
                 method: "PUT",
                 headers: {
                     Authorization: `Bearer ${token}`,
