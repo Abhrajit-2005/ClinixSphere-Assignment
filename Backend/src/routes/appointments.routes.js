@@ -29,7 +29,7 @@ router.post('/', auth, requireRole("patient"), async (req, res) => {
         if (!doctorUser || doctorUser.role !== 'doctor')
             return res.status(404).json({ message: 'Doctor not found' });
 
-        const apptStart = dayjs(time).local();
+        const apptStart = dayjs(time);
         if (!apptStart.isValid()) return res.status(400).json({ message: 'Invalid time' });
         const apptEnd = apptStart.add(30, 'minute'); // fixed 30-min slots
 
@@ -43,23 +43,10 @@ router.post('/', auth, requireRole("patient"), async (req, res) => {
 
         const slots = avail.week?.[dayKey] || [];
         const withinSlot = slots.some(s => {
-            const slotStart = dayjs(`${dateISO} ${s.start}`).local();
-            const slotEnd = dayjs(`${dateISO} ${s.end}`).local();
+            const slotStart = dayjs(`${dateISO} ${s.start}`);
+            const slotEnd = dayjs(`${dateISO} ${s.end}`);
             return apptStart.isSameOrAfter(slotStart) && apptEnd.isSameOrBefore(slotEnd);
         });
-
-
-        console.log("DEBUG Booking", {
-            rawTime: time,
-            apptStart: apptStart.format(),
-            apptEnd: apptEnd.format(),
-            slots: slots.map(s => ({
-                start: `${dateISO} ${s.start}`,
-                end: `${dateISO} ${s.end}`
-            }))
-        });
-
-
         if (!withinSlot) return res.status(400).json({ message: 'Outside working hours' });
 
         // Overlaps handling
