@@ -219,7 +219,7 @@ export default function Prescriptions() {
                         {prescriptions.map((p) => (
                             <tr key={p._id} className="border-t hover:bg-gray-50">
                                 <td className="p-3">{p.patient?.name}</td>
-                                <td className="p-3">{new Date(p.appointment?.time).toLocaleString()}</td>
+                                <td className="p-3">{new Date(p.appointment.time).toLocaleString()}</td>
                                 <td className="p-3">{p.symptoms}</td>
                                 <td className="p-3">{p.diagnosis}</td>
                                 <td className="p-3">
