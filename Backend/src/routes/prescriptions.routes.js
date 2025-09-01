@@ -56,6 +56,7 @@ router.get('/mine', auth, requireRole('doctor'), async (req, res) => {
     const prescriptions = await Prescription.find({ doctor: req.user.id })
         .populate('patient', 'name email')
         .populate('appointment', 'time status');
+    console.log(prescriptions);
 
     res.json(prescriptions);
 });
